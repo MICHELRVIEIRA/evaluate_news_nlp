@@ -12,8 +12,22 @@ module.exports = {
                 test: '/\.js$/',
                 exclude: /node_modules/,
                 loader: "babel-loader"
+            },
+            {
+                test: /\.js$/,
+                enforce: 'pre',
+                use: ['source-map-loader'],
+            },
+            {
+                test: /\.scss$/,
+                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
             }            
         ]
+    },
+    output: {
+        /* clean: true, */
+        libraryTarget: 'var',
+        library: 'Cliente'
     },
     plugins: [
         new HtmlWebPackPlugin({
