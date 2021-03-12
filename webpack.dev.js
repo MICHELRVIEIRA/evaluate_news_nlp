@@ -1,11 +1,20 @@
 const path = require('path')
 const webpack = require('webpack')
-const HtmlWebPackPlugin = require("html-webpack-plugin")
+const HtmlWebPackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     mode: 'development',
+    devtool: 'source-map',
     entry: './src/client/index.js',
+    devServer: {
+        // Update port to 3000 for classroom
+        port: 3000
+    },
+    output: {
+        libraryTarget: 'var',
+        library: 'Client'
+    },
     module: {
         rules: [
             {
@@ -14,20 +23,10 @@ module.exports = {
                 loader: "babel-loader"
             },
             {
-                test: /\.js$/,
-                enforce: 'pre',
-                use: ['source-map-loader'],
-            },
-            {
                 test: /\.scss$/,
                 use: [ 'style-loader', 'css-loader', 'sass-loader' ]
-            }            
+            }
         ]
-    },
-    output: {
-        /* clean: true, */
-        libraryTarget: 'var',
-        library: 'Cliente'
     },
     plugins: [
         new HtmlWebPackPlugin({
