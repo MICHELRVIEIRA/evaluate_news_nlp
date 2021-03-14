@@ -7,10 +7,6 @@ module.exports = {
     mode: 'development',
     devtool: 'source-map',
     entry: './src/client/index.js',
-    devServer: {
-        // Update port to 3000 for classroom
-        port: 3000
-    },
     output: {
         libraryTarget: 'var',
         library: 'Client'

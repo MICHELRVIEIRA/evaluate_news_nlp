@@ -28,7 +28,7 @@ function handleSubmit(event) {
 
 const postData = async (data = {})=>{
 
-    const response = await fetch('http://localhost:8080/meaningcloud-api', {
+    const response = await fetch('http://localhost:8081/meaningcloud-api', {
     method: 'POST', 
     credentials: 'same-origin', 
     headers: {
