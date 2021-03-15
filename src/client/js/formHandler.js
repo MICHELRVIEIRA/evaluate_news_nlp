@@ -14,7 +14,7 @@ function handleSubmit(event) {
     })
 
       .then(res => res.json())  
-      .then(res=>{updateUI(res)})
+      .then(res=>{Client.updateUI(res)})
 
     //console.log("::: Form Submitted :::")
     //fetch('http://localhost:8080/test')
@@ -28,8 +28,7 @@ function handleSubmit(event) {
 
 // Link: https://knowledge.udacity.com/questions/517022
 
-  
-const updateUI  = async () => {
+/* const updateUI  = async () => {
   
     const request = await fetch ('/')
   
@@ -51,6 +50,6 @@ const updateUI  = async () => {
   
     }
   
-}
+}*/
 
 export { handleSubmit }
