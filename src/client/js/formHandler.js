@@ -13,7 +13,8 @@ function handleSubmit(event) {
       body: JSON.stringify({texto: texto})  
     })
 
-    .then(res=>{updateUI(res)})
+      .then(res => res.json())  
+      .then(res=>{updateUI(res)})
 
     //console.log("::: Form Submitted :::")
     //fetch('http://localhost:8080/test')
