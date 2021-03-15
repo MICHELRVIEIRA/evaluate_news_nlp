@@ -2,7 +2,7 @@ function handleSubmit(event) {
     
     event.preventDefault()
 
-    let url = document.getElementById('name').value
+    let texto = document.getElementById('name').value
 
     fetch('http://localhost:8081/meaningcloud-api', {
       method: 'POST', 
@@ -10,7 +10,7 @@ function handleSubmit(event) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({url: url})  
+      body: JSON.stringify({texto: texto})  
     })
 
     .then(res=>{updateUI(res)})
