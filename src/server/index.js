@@ -1,6 +1,6 @@
 
 const dotenv = require('dotenv');
-dotenv.config();
+dotenv.config({ path: 'path/to/process.env' });
 
 const fetch =require ('node-fetch')
 
@@ -48,7 +48,7 @@ app.get('/test', function (req, res) {
 // https://knowledge.udacity.com/questions/517022
 
 app.post('/meaningcloud-api', async function (req, res){
-  const apiURL = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${req.body.url}&lang=en`
+  const apiURL = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${req.body.url}&lang=pt`
   console.log(apiURL)
   const response = await fetch(apiURL)
   try {
