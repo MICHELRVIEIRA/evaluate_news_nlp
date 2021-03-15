@@ -48,14 +48,14 @@ app.get('/test', function (req, res) {
 // https://knowledge.udacity.com/questions/517022
 
 app.post('/meaningcloud-api', async function (req, res){
-    const apiURL = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${req.body.url}&lang=pt`
-    console.log(apiURL)
-    const response = await fetch(apiURL)
-    try {
-      const data= await response.json()
-      console.log(data)
-      res.send(data)
-    } catch(error) {
-      console.log(error)
-    }
+  const apiURL = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${req.body.url}&lang=en`
+  console.log(apiURL)
+  const response = await fetch(apiURL)
+  try {
+    const data= await response.json()
+    console.log(data)
+    res.send(data)
+  } catch(error) {
+    console.log(error)
+  }
 })
