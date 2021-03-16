@@ -22,7 +22,11 @@ const cors = require('cors');
 
 app.use(cors());
 
-app.use(express.static('/dist'))
+// Correção solicitada na revsão do projeto.
+
+// Original era app.use(express.static('/dist'))
+
+app.use(express.static('dist'))
 
 // console.log(__dirname)
 
@@ -33,8 +37,12 @@ app.listen(8081, function () {
 
 // GET route
 
+// Correção solicitada na revsão do projeto.
+
+// Original era res.sendFile('/dist/index.html')
+
 app.get('/', function (req, res) {
-    res.sendFile('/dist/index.html')
+    res.sendFile('dist/index.html')
 })
 
 app.get('/test', function (req, res) {
